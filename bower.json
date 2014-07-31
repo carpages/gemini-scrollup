@@ -1,0 +1,13 @@
+{
+  "name": "gemini-scrollup",
+  "authors": [
+    {"name": "Matt Rose", "email": "matt@mattrose.ca"}
+  ],
+  "main": [
+    "gemini.scrollup.js"
+  ],
+  "ignore": [],
+  "dependencies": {
+    "gemini-loader": "ssh://git@stash.carpages.ca/gem/gemini-loader.git"
+  }
+}

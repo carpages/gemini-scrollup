@@ -1,0 +1,21 @@
+/*------------------------------------*\
+    $SCROLL UP
+\*------------------------------------*/
+/**
+  * @module Scroll Up
+  * @description Some CSS for the scrollUp plugin
+  */
+
+.scrollup {
+  @extend %beautons;
+  cursor: pointer;
+  position: fixed;
+  bottom: $base-spacing-unit;
+  right: $base-spacing-unit;
+  z-index: 100;
+
+  // Styling
+  color: $white;
+  background: $black;
+  background: rgba($black, 0.7);
+}
