@@ -108,7 +108,7 @@ define(['gemini'], function($){
         // Create
         plugin.$button = $('<div>', {
           id: plugin.settings.buttonID,
-          class: plugin.settings.buttonClass,
+          "class": plugin.settings.buttonClass,
           style: 'display:none;'
         })
           .text(plugin.settings.buttonText);
