@@ -29,7 +29,18 @@ up.
   });
  */
 
-define(['gemini'], function($){
+(function(factory) {
+  if (typeof define === 'function' && define.amd) {
+    // AMD. Register as an anonymous module.
+    define(['gemini'], factory);
+  } else if (typeof exports === 'object') {
+    // Node/CommonJS
+    module.exports = factory(require('gemini'));
+  } else {
+    // Browser globals
+    factory(G);
+  }
+}(function($) {
 
   var _ = $._;
 
@@ -191,4 +202,4 @@ define(['gemini'], function($){
     return plugin;
   };
 
-});
+}));
