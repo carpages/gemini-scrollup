@@ -4,10 +4,17 @@
     {"name": "Matt Rose", "email": "matt@mattrose.ca"}
   ],
   "main": [
-    "gemini.scrollup.js"
+    "gemini.scrollup.js",
+    "sass/scrollup.scss"
   ],
-  "ignore": [],
+  "ignore": [
+    "test"
+  ],
   "dependencies": {
-    "gemini-loader": "~0"
+    "gemini-loader": "~0",
+    "gemini-css": "~1"
+  },
+  "devDependencies": {
+    "requirejs": "~2.1.11"
   }
 }
