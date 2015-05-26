@@ -1,21 +1,50 @@
-/*------------------------------------*\
-    $SCROLL UP
-\*------------------------------------*/
 /**
-  * @module Scroll Up
+ ********************************
+ * _SCROLLUP.SCSS
+ ********************************
+ */
+
+/**
+ * @settings $gemini-scrollup
+ * @description The settings to give scrollup a custom look
+ *
+ * @prop {color} [color=#333] The font color of the font
+ * @prop {color} [background-color=#EEE] The background color
+ * @prop {measurement} [padding-ends=0.5em] The padding on the top and bottom
+ * @prop {measurement} [padding-sides=1em] The padding on the left and right
+ * @prop {measurement} [border-width=0] The width of the border
+ * @prop {color} [borde-color=#333] The color of the border
+ * @prop {measurement} [border-radius=0] The border of the radius
+ */
+$gemini-scrollup: () !default;
+
+$gemini-scrollup: extend((
+  color: #FFF,
+  background-color: rgba(#000, 0.75),
+  padding-ends: 0.25em,
+  padding-sides: 0.5em,
+  border-width: 0,
+  border-color: #333,
+  border-radius: 0
+), $gemini-scrollup);
+
+/**
+  * @module Scroll Up [.scrollup]
   * @description Some CSS for the scrollUp plugin
   */
-
 .scrollup {
-  @extend %beautons;
+  @include tag(
+    $color         : get(color, $gemini-scrollup),
+    $background    : get(background-color, $gemini-scrollup),
+    $ends          : get(padding-ends, $gemini-scrollup),
+    $sides         : get(padding-sides, $gemini-scrollup),
+    $border-width  : get(border-width, $gemini-scrollup),
+    $border-color  : get(border-color, $gemini-scrollup),
+    $border-radius : get(border-radius, $gemini-scrollup)
+  );
   cursor: pointer;
   position: fixed;
-  bottom: $base-spacing-unit;
-  right: $base-spacing-unit;
+  bottom: get(spacing);
+  right: get(spacing);
   z-index: 100;
-
-  // Styling
-  color: $white;
-  background: $black;
-  background: rgba($black, 0.7);
 }
