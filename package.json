@@ -1,17 +1,22 @@
 {
   "name": "gemini-scrollup",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Gemini Scrollup",
   "author": {
     "name": "Matt Rose",
     "email": "matt@mattrose.ca",
     "url": "http://mattrose.ca"
   },
+  "main": "gemini.scrollup.js",
   "licenses": [
     {
       "type": "MIT"
     }
   ],
+  "dependencies": {
+    "gemini-loader": "~0",
+    "gemini-css": "~1"
+  },
   "devDependencies": {
     "grunt": "~0.4.2",
     "grunt-contrib-jshint": "~0.7.2",
