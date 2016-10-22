@@ -29,24 +29,24 @@ up.
   });
  */
 
-(function(factory) {
-  if (typeof define === 'function' && define.amd) {
+( function( factory ) {
+  if ( typeof define === 'function' && define.amd ) {
     // AMD. Register as an anonymous module.
-    define(['gemini'], factory);
-  } else if (typeof exports === 'object') {
+    define([ 'gemini' ], factory );
+  } else if ( typeof exports === 'object' ) {
     // Node/CommonJS
-    module.exports = factory(require('gemini'));
+    module.exports = factory(
+      require( 'gemini' )
+    );
   } else {
     // Browser globals
-    factory(G);
+    factory( G );
   }
-}(function($) {
-
+}( function( $ ) {
   var _ = $._;
 
-  //Make an object to be used by both $.scrollUp
-  $.scrollup = function(options){
-
+  // Make an object to be used by both $.scrollUp
+  $.scrollup = function( options ) {
     var plugin = {
       settings: $.extend({}, {
         /**
@@ -56,7 +56,7 @@ up.
          * @type string
          * @default 'js-scrollup-button'
          */
-        buttonID: 'js-scrollup-button',
+        buttonID:       'js-scrollup-button',
         /**
          * The class of the scroll-to-top button
          *
@@ -64,7 +64,7 @@ up.
          * @type string
          * @default 'scrollup'
          */
-        buttonClass: 'scrollup',
+        buttonClass:    'scrollup',
         /**
          * The text of the scroll-to-top button
          *
@@ -72,7 +72,7 @@ up.
          * @type string
          * @default 'Scroll to Top'
          */
-        buttonText: 'Scroll to Top',
+        buttonText:     'Scroll to Top',
         /**
          * The the distance (px) from the top of the page before the
          * scroll-to-top button will show
@@ -90,7 +90,7 @@ up.
          * @type integer
          * @default 300
          */
-        scrollSpeed: 300,
+        scrollSpeed:    300,
         /**
          * The time (milliseconds) it takes for the button to fade in and out
          *
@@ -107,28 +107,28 @@ up.
          * @type integer
          * @default 250
          */
-        throttle: 250
-      }, options),
+        throttle:       250
+      }, options ),
 
-      init: function(){
+      init: function() {
         var plugin = this;
 
         /*
          * Button
          */
         // Create
-        plugin.$button = $('<div>', {
-          id: plugin.settings.buttonID,
-          "class": plugin.settings.buttonClass,
-          style: 'display:none;'
+        plugin.$button = $( '<div>', {
+          id:      plugin.settings.buttonID,
+          'class': plugin.settings.buttonClass,
+          style:   'display:none;'
         })
-          .text(plugin.settings.buttonText);
+          .text( plugin.settings.buttonText );
 
         // Add
-        $('body').append(plugin.$button);
+        $( 'body' ).append( plugin.$button );
 
         // Click Event
-        plugin.$button.click(function(){
+        plugin.$button.click( function() {
           plugin.scrollUp();
         });
 
@@ -136,22 +136,19 @@ up.
          * Scroll Event
          */
         plugin._lastTop = 0;
-        $window.scroll(_.throttle(function(e){
-
-          var scrollTop = $window.scrollTop();
+        $( window ).scroll( _.throttle( function( e ) {
+          var scrollTop = $( window ).scrollTop();
 
           // If the user is below the scroll distance and scrolling up
-          if( scrollTop > plugin.settings.scrollDistance  &&
-              scrollTop < plugin._lastTop) {
+          if ( scrollTop > plugin.settings.scrollDistance &&
+              scrollTop < plugin._lastTop ) {
             plugin.show();
           } else {
             plugin.hide();
           }
 
           plugin._lastTop = scrollTop;
-
-        }, plugin.settings.throttle));
-
+        }, plugin.settings.throttle ));
       },
       /**
        * Show the scroll-to-top button
@@ -160,10 +157,10 @@ up.
        * @name gemini.scrollup#show
        * @return {object} Returns plugin object
       **/
-      show: function(){
+      show: function() {
         var plugin = this;
 
-        plugin.$button.stop(true, true).fadeIn(plugin.settings.animationSpeed);
+        plugin.$button.stop( true, true ).fadeIn( plugin.settings.animationSpeed );
 
         return plugin;
       },
@@ -174,10 +171,10 @@ up.
        * @name gemini.scrollup#hide
        * @return {object} Returns plugin object
       **/
-      hide: function(){
+      hide: function() {
         var plugin = this;
 
-        plugin.$button.stop(true, true).fadeOut(plugin.settings.animationSpeed);
+        plugin.$button.stop( true, true ).fadeOut( plugin.settings.animationSpeed );
 
         return plugin;
       },
@@ -188,10 +185,10 @@ up.
        * @name gemini.scrollup#scrollUp
        * @return {object} Returns plugin object
       **/
-      scrollUp: function(){
+      scrollUp: function() {
         var plugin = this;
 
-        $("html, body").animate({ scrollTop: 0 }, plugin.settings.scrollSpeed);
+        $( 'html, body' ).animate({ scrollTop: 0 }, plugin.settings.scrollSpeed );
 
         return plugin;
       }
@@ -201,5 +198,4 @@ up.
 
     return plugin;
   };
-
 }));
