@@ -56,7 +56,7 @@ up.
          * @type string
          * @default 'js-scrollup-button'
          */
-        buttonID:       'js-scrollup-button',
+        buttonID: 'js-scrollup-button',
         /**
          * The class of the scroll-to-top button
          *
@@ -64,7 +64,7 @@ up.
          * @type string
          * @default 'scrollup'
          */
-        buttonClass:    'scrollup',
+        buttonClass: 'scrollup',
         /**
          * The text of the scroll-to-top button
          *
@@ -72,7 +72,7 @@ up.
          * @type string
          * @default 'Scroll to Top'
          */
-        buttonText:     'Scroll to Top',
+        buttonText: 'Scroll to Top',
         /**
          * The the distance (px) from the top of the page before the
          * scroll-to-top button will show
@@ -90,7 +90,7 @@ up.
          * @type integer
          * @default 300
          */
-        scrollSpeed:    300,
+        scrollSpeed: 300,
         /**
          * The time (milliseconds) it takes for the button to fade in and out
          *
@@ -107,7 +107,7 @@ up.
          * @type integer
          * @default 250
          */
-        throttle:       250
+        throttle: 250
       }, options ),
 
       init: function() {
@@ -118,9 +118,9 @@ up.
          */
         // Create
         plugin.$button = $( '<div>', {
-          id:      plugin.settings.buttonID,
+          id: plugin.settings.buttonID,
           'class': plugin.settings.buttonClass,
-          style:   'display:none;'
+          style: 'display:none;'
         })
           .text( plugin.settings.buttonText );
 
