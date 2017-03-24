@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## v1.0.2
+
+  - Use Carpages eslint config
+  - Drop Ruby dependency
+
 ## v1.0.1
 
   - Remove jshint in favour of eslint with custom ruleset
