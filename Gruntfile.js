@@ -31,9 +31,6 @@ module.exports = function( grunt ) {
       }
     },
     eslint: {
-      options: {
-        configFile: '.eslintrc'
-      },
       target: [ 'gemini.scrollup.js' ]
     },
     connect: {
@@ -46,6 +43,7 @@ module.exports = function( grunt ) {
     },
     sass: {
       options: {
+        implementation: require( 'node-sass' ),
         importer: compassImporter,
         includePaths: [ 'bower_components' ]
       },
